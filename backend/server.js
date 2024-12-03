@@ -6,6 +6,7 @@ require("dotenv").config();
 
 // Import routes
 const UserAPI = require("./Routes/User");
+const TaskAPI = require("./Routes/Task");
 
 //Initialize app
 const app = express();
@@ -15,8 +16,10 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-//Routes
+// Routes
 app.use("/api/v1", UserAPI);
+app.use("/api/v1", TaskAPI);
+
 app.get("/", (req, res) => {
   //localhost:3000/api/v1/sign-in
   res.send("Hello From BackEnd!");
