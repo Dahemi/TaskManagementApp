@@ -1,16 +1,18 @@
-import { useState } from "react";
-
-import "./App.css";
-
-import SideBar from "./Components/SideBar";
-import Home from "./Components/Home";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import SignUpPage from "./components/SignUpPage";
+import TaskPage from "./components/TaskPage";
 
 function App() {
   return (
-    <div className="bg-blue-800 text-pink-700 h-screen p-1">
-      <Home />
-      <SideBar />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/tasks" element={<TaskPage />} />
+      </Routes>
+    </Router>
   );
 }
 
